@@ -16,16 +16,17 @@ const Header = (props: HeaderProps) => {
                 <Pressable
                     style={styles.pathButton}
                     onPress={() => setDisplayMyQR(true)}>
-                    <Text
-                        style={{ ...{ color: 'white', fontWeight: 'bold', textTransform: 'uppercase' }, ...styles.shadoxBoxing }}>
+                    <Text style={{ ...styles.buttonText, ...styles.shadoxBoxing }}>
                         Mi info
                     </Text>
                 </Pressable>
-                <Button
+                <Pressable
                     onPress={() => setDisplayMyQR(false)}
-                    title="Mi Repo"
-                    color="light-gray"
-                    accessibilityLabel='Boton para mostrar o ocultar el QR' />
+                    accessibilityLabel='Boton para mostrar o ocultar el QR' >
+                        <Text style={{ ...styles.buttonText, ...styles.shadoxBoxing }}>
+                            Mi Repo
+                        </Text>
+                </Pressable>
             </View>
         </View>
     )
@@ -64,5 +65,10 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.43,
         shadowRadius: 9.51,
         elevation: 15,
+    },
+    buttonText: {
+        color: 'white',
+        fontWeight: 'bold',
+        textTransform: 'uppercase'
     }
 })
