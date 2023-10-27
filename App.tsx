@@ -1,23 +1,26 @@
 import { ScrollView, StyleSheet, Text, View, Image } from "react-native";
 import Header from "./components/Header";
 import { useState } from "react";
-import Description from "./components/Description";
-import HobbiesList from "./components/HobbiesList";
 import QrCodes from "./components/QrCodes";
+import InfoContainer from "./components/InfoContainer";
+
 
 export default function App() {
   const [displayMyQR, setDisplayMyQR] = useState(true);
 
   return (
     <View style={styles.container}>
-      <Header setDisplayMyQR={setDisplayMyQR} />
+      <View style={styles.headerContainer}>
+        <Header setDisplayMyQR={setDisplayMyQR} />
+      </View>
       {displayMyQR ? (
-        <View style={styles.bodyStyles}>
-          <Description />
-          <HobbiesList />
+        <View style={styles.infoContainer}>
+          <InfoContainer />
         </View>
       ) : (
-        <QrCodes />
+        <View style={styles.qrContainer}>
+          <QrCodes />
+        </View>
       )}
     </View>
   );
@@ -38,4 +41,15 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     height: "85%",
   },
+  headerContainer: {
+    width: "100%",
+    marginTop: -30,
+    marginBottom: 20,
+  },
+  infoContainer: {
+    flex: 2
+  },
+  qrContainer: {
+    flex: 2
+  }
 });
