@@ -1,4 +1,5 @@
 import { StyleSheet, Text, View, Image } from "react-native";
+import appColors from "../assets/styles/appColors";
 
 type infoProps = {
   changeUser: Boolean;
@@ -14,8 +15,8 @@ const Description = (props: infoProps) => {
             source={require("../assets/messichikito.jpg")}
           />
           <View style={styles.descriptionContainer}>
-            <Text style={styles.textStyle}>Descripción sobre Manu</Text>
-            <Text>
+            <Text style={styles.titleStyle}>Descripción sobre Manu</Text>
+            <Text style={styles.textStyle}>
               Soy Manu me gusta el cine, la formula 1, la edición de videos y
               jugar videojuegos y en especial el papers please
             </Text>
@@ -28,9 +29,10 @@ const Description = (props: infoProps) => {
             source={require("../assets/AfroPixel.png")}
           />
           <View style={styles.descriptionContainer}>
-            <Text style={styles.textStyle}>Descripción sobre Joel</Text>
-            <Text>
-            Mi nombre es Joel Munuera Marrero, actualmente me encuentro estudiando 2º CFGS DAM en Salesianos la Cuesta.
+            <Text style={styles.titleStyle}>Descripción sobre Joel</Text>
+            <Text style={styles.textStyle}>
+              Mi nombre es Joel Munuera Marrero, actualmente me encuentro
+              estudiando 2º CFGS DAM en Salesianos la Cuesta.
             </Text>
           </View>
         </View>
@@ -47,18 +49,23 @@ const styles = StyleSheet.create({
     width: 90,
     borderRadius: 100,
   },
-  textStyle: {
+  titleStyle: {
     textAlign: "center",
     fontWeight: "700",
     fontSize: 20,
+    color: appColors.titleColor,
   },
+  textStyle: {
+    color: appColors.secondary,
+  },
+
   descriptionStyle: {
     flexDirection: "row",
     alignItems: "center",
   },
   descriptionContainer: {
     margin: 10,
-    backgroundColor: "lightgray",
+    backgroundColor: appColors.description,
     padding: 10,
     borderRadius: 10,
     width: "70%",
