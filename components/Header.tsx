@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlignVertical: 'center',
         fontSize: 30,
+        padding: 15
     },
     rowTopSecondContainer: {
         flexDirection: 'row',
@@ -69,6 +70,7 @@ const styles = StyleSheet.create({
     buttonText: {
         color: 'white',
         fontWeight: 'bold',
-        textTransform: 'uppercase'
+        textTransform: 'uppercase',
+        padding: 5
     }
 })

@@ -10,7 +10,9 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Header setDisplayMyQR={setDisplayMyQR} />
+      <View style={styles.headerContainer}>
+        <Header setDisplayMyQR={setDisplayMyQR} />
+      </View>
       {displayMyQR ? (
         <View style={styles.infoContainer}>
           <InfoContainer />
@@ -38,6 +40,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     height: "85%",
+  },
+  headerContainer: {
+    width: "100%",
+    marginTop: -30,
+    marginBottom: 20,
   },
   infoContainer: {
     flex: 2
