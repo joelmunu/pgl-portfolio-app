@@ -13,10 +13,12 @@ export default function App() {
       <Header setDisplayMyQR={setDisplayMyQR} />
       {displayMyQR ? (
         <View style={styles.infoContainer}>
-          <InfoContainer/>
+          <InfoContainer />
         </View>
       ) : (
-        <QrCodes />
+        <View style={styles.qrContainer}>
+          <QrCodes />
+        </View>
       )}
     </View>
   );
@@ -38,6 +40,9 @@ const styles = StyleSheet.create({
     height: "85%",
   },
   infoContainer: {
+    flex: 2
+  },
+  qrContainer: {
     flex: 2
   }
 });
