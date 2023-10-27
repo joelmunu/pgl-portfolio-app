@@ -30,7 +30,16 @@ const HobbiesList = (props: infoProps) => {
         <View>
           <Text style={styles.titleStyle}>cosas que me gustan mucho:</Text>
           <ScrollView style={{ padding: 10 }}>
-            <Text style={styles.hobbiesStyle}>Salir a pasear</Text>
+            <Text style={styles.hobbiesStyle}>Informática</Text>
+            <Text style={styles.hobbiesStyle}>Ver producciones audiovisuales de alta calidad</Text>
+            <Text style={styles.hobbiesStyle}>Ver la kinli</Text>
+            <Text style={styles.hobbiesStyle}>Coches y simuladores de conducción</Text>
+            <Text style={styles.hobbiesStyle}>Agapornis</Text>
+            <Text style={styles.hobbiesStyle}>Aviación</Text>
+            <Text style={styles.hobbiesStyle}>McDonald's</Text>
+            <Text style={styles.hobbiesStyle}>Escuchar producciones musicales de alta calidad en formato original sin comprimir</Text>
+            <Text style={styles.hobbiesStyle}>Ir al gimnsasio y correr</Text>
+            <Text style={styles.hobbiesStyle}>Y sobretodo producciones audiovisiales de la mejor de las calidades</Text>
           </ScrollView>
         </View>
       )}

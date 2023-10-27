@@ -16,7 +16,7 @@ const Description = (props: infoProps) => {
           <View style={styles.descriptionContainer}>
             <Text style={styles.textStyle}>Descripción sobre Manu</Text>
             <Text>
-              soy manu me gusta el cine, la formula 1, la edición de videos y
+              Soy Manu me gusta el cine, la formula 1, la edición de videos y
               jugar videojuegos y en especial el papers please
             </Text>
           </View>
@@ -25,13 +25,12 @@ const Description = (props: infoProps) => {
         <View style={styles.descriptionStyle}>
           <Image
             style={styles.avatar}
-            source={require("../assets/SofyanAmrabat.jpg")}
+            source={require("../assets/AfroPixel.png")}
           />
           <View style={styles.descriptionContainer}>
             <Text style={styles.textStyle}>Descripción sobre Joel</Text>
             <Text>
-              Soy profe y me gusta mi trabajo aunque a veces me de por enrevesar
-              prácticas para mis queridos alumnos
+            Mi nombre es Joel Munuera Marrero, actualmente me encuentro estudiando 2º CFGS DAM en Salesianos la Cuesta.
             </Text>
           </View>
         </View>
