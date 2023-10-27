@@ -1,23 +1,39 @@
 import { StyleSheet, Text, View, ScrollView } from 'react-native'
 
-const HobbiesList = () => {
+type infoProps = {
+    changeUser: Boolean;
+};
+
+const HobbiesList = (props: infoProps) => {
     return (
         <View>
-            <Text style={styles.titleStyle}>cosas que me gustan mucho:</Text>
-            <ScrollView style={{ padding: 10 }}>
-                <Text style={styles.hobbiesStyle}>Salir a pasear</Text>
-                <Text style={styles.hobbiesStyle}>Senderismo</Text>
-                <Text style={styles.hobbiesStyle}>Ir a la playita</Text>
-                <Text style={styles.hobbiesStyle}>Domingos de misa</Text>
-                <Text style={styles.hobbiesStyle}>La guitarrita</Text>
-                <Text style={styles.hobbiesStyle}>El monte con lluvia</Text>
-                <Text style={styles.hobbiesStyle}>Viajar</Text>
-                <Text style={styles.hobbiesStyle}>Música variadita</Text>
-                <Text style={styles.hobbiesStyle}>Anime</Text>
-                <Text style={styles.hobbiesStyle}>Ducharme</Text>
-                <Text style={styles.hobbiesStyle}>Videojuegos</Text>
-                <Text style={styles.hobbiesStyle}>Ir de cenar romántica</Text>
-            </ScrollView>
+            {props.changeUser ? (
+                <View>
+                    <Text style={styles.titleStyle}>cosas que me gustan mucho:</Text>
+                    <ScrollView style={{ padding: 10 }}>
+                        <Text style={styles.hobbiesStyle}>Salir a pasear</Text>
+                        <Text style={styles.hobbiesStyle}>Senderismo</Text>
+                        <Text style={styles.hobbiesStyle}>Ir a la playita</Text>
+                        <Text style={styles.hobbiesStyle}>Domingos de misa</Text>
+                        <Text style={styles.hobbiesStyle}>La guitarrita</Text>
+                        <Text style={styles.hobbiesStyle}>El monte con lluvia</Text>
+                        <Text style={styles.hobbiesStyle}>Viajar</Text>
+                        <Text style={styles.hobbiesStyle}>Música variadita</Text>
+                        <Text style={styles.hobbiesStyle}>Anime</Text>
+                        <Text style={styles.hobbiesStyle}>Ducharme</Text>
+                        <Text style={styles.hobbiesStyle}>Videojuegos</Text>
+                        <Text style={styles.hobbiesStyle}>Ir de cenar romántica</Text>
+                    </ScrollView>
+                </View>
+            ) : (
+                <View>
+                    <Text style={styles.titleStyle}>cosas que me gustan mucho:</Text>
+                    <ScrollView style={{ padding: 10 }}>
+                        <Text style={styles.hobbiesStyle}>Salir a pasear</Text>
+                      
+                    </ScrollView>
+                </View>
+            )}
         </View>
     )
 }

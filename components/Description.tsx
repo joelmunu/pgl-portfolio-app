@@ -1,19 +1,41 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 
-const Description = () => {
+type infoProps = {
+  changeUser: Boolean;
+};
+
+const Description = (props: infoProps) => {
   return (
-    <View style={styles.descriptionStyle}>
-      <Image
-        style={styles.avatar}
-        source={require("../assets/SofyanAmrabat.jpg")}
-      />
-      <View style={styles.descriptionContainer}>
-        <Text style={styles.textStyle}>Descripción sobre mí!</Text>
-        <Text>
-          Soy profe y me gusta mi trabajo aunque a veces me de por enrevesar
-          prácticas para mis queridos alumnos
-        </Text>
-      </View>
+    <View>
+      {props.changeUser ? (
+        <View style={styles.descriptionStyle}>
+          <Image
+            style={styles.avatar}
+            source={require("../assets/SofyanAmrabat.jpg")}
+          />
+          <View style={styles.descriptionContainer}>
+            <Text style={styles.textStyle}>Descripción sobre Manu</Text>
+            <Text>
+              Soy profe y me gusta mi trabajo aunque a veces me de por enrevesar
+              prácticas para mis queridos alumnos
+            </Text>
+          </View>
+        </View>
+      ) : (
+        <View style={styles.descriptionStyle}>
+          <Image
+            style={styles.avatar}
+            source={require("../assets/SofyanAmrabat.jpg")}
+          />
+          <View style={styles.descriptionContainer}>
+            <Text style={styles.textStyle}>Descripción sobre Joel</Text>
+            <Text>
+              Soy profe y me gusta mi trabajo aunque a veces me de por enrevesar
+              prácticas para mis queridos alumnos
+            </Text>
+          </View>
+        </View>
+      )}
     </View>
   );
 };
