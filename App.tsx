@@ -4,7 +4,6 @@ import { useState } from "react";
 import QrCodes from "./components/QrCodes";
 import InfoContainer from "./components/InfoContainer";
 
-
 export default function App() {
   const [displayMyQR, setDisplayMyQR] = useState(true);
 
@@ -43,13 +42,10 @@ const styles = StyleSheet.create({
   },
   headerContainer: {
     width: "100%",
-    marginTop: -30,
-    marginBottom: 20,
+    marginTop: 299,
   },
-  infoContainer: {
-    flex: 2
-  },
+  infoContainer: {},
   qrContainer: {
-    flex: 2
-  }
+    flex: 2,
+  },
 });
