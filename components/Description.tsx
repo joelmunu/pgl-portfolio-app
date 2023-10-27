@@ -11,13 +11,13 @@ const Description = (props: infoProps) => {
         <View style={styles.descriptionStyle}>
           <Image
             style={styles.avatar}
-            source={require("../assets/SofyanAmrabat.jpg")}
+            source={require("../assets/messichikito.jpg")}
           />
           <View style={styles.descriptionContainer}>
             <Text style={styles.textStyle}>Descripción sobre Manu</Text>
             <Text>
-              Soy profe y me gusta mi trabajo aunque a veces me de por enrevesar
-              prácticas para mis queridos alumnos
+              soy manu me gusta el cine, la formula 1, la edición de videos y
+              jugar videojuegos y en especial el papers please
             </Text>
           </View>
         </View>
