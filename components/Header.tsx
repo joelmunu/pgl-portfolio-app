@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, Pressable } from "react-native";
 import appColors from "../assets/styles/appColors";
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 type HeaderProps = {
   setDisplayMyQR: Function;
@@ -10,7 +11,14 @@ const Header = (props: HeaderProps) => {
 
   return (
     <View style={styles.topContainer}>
+      <View style={{flexDirection: 'row', alignItems: 'center'}}>
       <Text style={styles.firstTopRowContainer}>My Portfolio App</Text>
+      <Ionicons
+        name={'contrast-outline'}
+        size={32}
+        style={styles.buttonStyle}
+      />
+      </View>
       <View style={styles.rowTopSecondContainer}>
         <Pressable
           style={styles.pathButton}
@@ -37,8 +45,8 @@ export default Header;
 
 const styles = StyleSheet.create({
   topContainer: {
-    paddingTop: 50,
     width: "100%",
+    marginTop: -450,
   },
   firstTopRowContainer: {
     backgroundColor: appColors.primary,
@@ -48,6 +56,7 @@ const styles = StyleSheet.create({
     textAlignVertical: "center",
     fontSize: 30,
     padding: 15,
+    width: '90%'
   },
   rowTopSecondContainer: {
     flexDirection: "row",
@@ -74,4 +83,10 @@ const styles = StyleSheet.create({
     textTransform: "uppercase",
     padding: 5,
   },
+  buttonStyle: {
+    backgroundColor: appColors.primary,
+    color: appColors.titleColor,
+    width: "100%",
+    paddingVertical: 18,
+  }
 });

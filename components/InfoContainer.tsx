@@ -23,22 +23,12 @@ const InfoContainer = () => {
           <Text style={styles.buttonText}>Joel</Text>
         </Pressable>
       </View>
-
-      {changeUser ? (
         <View>
           <View style={styles.bodyStyles}>
             <Description changeUser={changeUser} />
           </View>
           <HobbiesList changeUser={changeUser} />
         </View>
-      ) : (
-        <View>
-          <View style={styles.bodyStyles}>
-            <Description changeUser={changeUser} />
-          </View>
-          <HobbiesList changeUser={changeUser} />
-        </View>
-      )}
     </View>
   );
 };

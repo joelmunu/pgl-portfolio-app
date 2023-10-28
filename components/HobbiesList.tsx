@@ -11,7 +11,7 @@ const HobbiesList = (props: infoProps) => {
       {props.changeUser ? (
         <View>
           <Text style={styles.titleStyle}>cosas que me gustan mucho:</Text>
-          <ScrollView style={{ padding: 10 }}>
+          <ScrollView>
             <Text style={styles.hobbiesStyle}>Ir al cine</Text>
             <Text style={styles.hobbiesStyle}>Ver series</Text>
             <Text style={styles.hobbiesStyle}>Ver F1</Text>

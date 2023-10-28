@@ -14,10 +14,10 @@ export default function App() {
       </View>
       {displayMyQR ? (
         <View style={styles.infoContainer}>
-          <InfoContainer />
+          <InfoContainer/>
         </View>
       ) : (
-        <View style={styles.qrContainer}>
+        <View style={{marginTop: -550}}>
           <QrCodes />
         </View>
       )}
@@ -27,7 +27,6 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
@@ -42,10 +41,10 @@ const styles = StyleSheet.create({
   },
   headerContainer: {
     width: "100%",
-    marginTop: 299,
+    position: "absolute",
+    flex: 1
   },
-  infoContainer: {},
-  qrContainer: {
-    flex: 2,
-  },
+  infoContainer: {
+    marginTop: 250,
+  }
 });
