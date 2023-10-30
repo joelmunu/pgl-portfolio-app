@@ -1,7 +1,5 @@
 import { StyleSheet, Text, View, Pressable } from "react-native";
 import appColors from "../assets/styles/appColors";
-import Ionicons from '@expo/vector-icons/Ionicons';
-
 type HeaderProps = {
   setDisplayMyQR: Function;
 };
@@ -11,21 +9,18 @@ const Header = (props: HeaderProps) => {
 
   return (
     <View style={styles.topContainer}>
-      <View style={{flexDirection: 'row', alignItems: 'center'}}>
-      <Text style={styles.firstTopRowContainer}>My Portfolio App</Text>
-      <Ionicons
-        name={'contrast-outline'}
-        size={32}
-        style={styles.buttonStyle}
-      />
+      <View>
+        <Text style={styles.firstTopRowContainer}>My Portfolio App</Text>
       </View>
       <View style={styles.rowTopSecondContainer}>
-        <Pressable
-          style={styles.pathButton}
-          onPress={() => setDisplayMyQR(true)}
-        >
+        <Pressable onPress={() => setDisplayMyQR(true)}>
           <Text style={{ ...styles.buttonText, ...styles.shadoxBoxing }}>
             Mi info
+          </Text>
+        </Pressable>
+        <Pressable>
+          <Text style={{ ...styles.buttonText, ...styles.shadoxBoxing }}>
+            Modo oscuro
           </Text>
         </Pressable>
         <Pressable
@@ -56,16 +51,13 @@ const styles = StyleSheet.create({
     textAlignVertical: "center",
     fontSize: 30,
     padding: 15,
-    width: '90%'
+    width: "100%",
   },
   rowTopSecondContainer: {
     flexDirection: "row",
     backgroundColor: appColors.secondary,
-    justifyContent: "center",
+    justifyContent: "space-evenly",
     alignItems: "center",
-  },
-  pathButton: {
-    width: "50%",
   },
   shadoxBoxing: {
     shadowColor: "#000",
@@ -87,6 +79,6 @@ const styles = StyleSheet.create({
     backgroundColor: appColors.primary,
     color: appColors.titleColor,
     width: "100%",
-    paddingVertical: 18,
-  }
+    paddingVertical: 19,
+  },
 });
