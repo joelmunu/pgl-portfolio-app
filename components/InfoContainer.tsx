@@ -4,30 +4,34 @@ import Description from "../components/Description";
 import HobbiesList from "../components/HobbiesList";
 import appColors from "../assets/styles/appColors";
 
-const InfoContainer = () => {
-  const [changeUser, setChangeUser] = useState(true);
+type InfoProps = {
+  changeColor: Boolean;
+};
 
+const InfoContainer = (props: InfoProps) => {
+  const [changeUser, setChangeUser] = useState(true);
+  const {changeColor } = props;
   return (
     <View>
       <View style={styles.pressableStyle}>
         <Pressable
-          style={{ ...styles.button, ...styles.shadoxBoxing }}
+          style={changeColor ? ({ ...styles.button, ...styles.shadoxBoxing, ...styles.buttonDark }) : ({ ...styles.button, ...styles.shadoxBoxing })}
           onPress={() => setChangeUser(true)}
         >
-          <Text style={styles.buttonText}>Manu</Text>
+          <Text style={changeColor ? ({...styles.buttonText ,...styles.buttonTextDark}) : (styles.buttonText)}>Manu</Text>
         </Pressable>
         <Pressable
-          style={{ ...styles.button, ...styles.shadoxBoxing }}
+          style={changeColor ? ({ ...styles.button, ...styles.shadoxBoxing, ...styles.buttonDark }) : ({ ...styles.button, ...styles.shadoxBoxing })}
           onPress={() => setChangeUser(false)}
         >
-          <Text style={styles.buttonText}>Joel</Text>
+          <Text style={changeColor ? ({...styles.buttonText ,...styles.buttonTextDark}) : (styles.buttonText)}>Joel</Text>
         </Pressable>
       </View>
         <View>
           <View style={styles.bodyStyles}>
-            <Description changeUser={changeUser} />
+            <Description changeUser={changeUser} changeColor={changeColor}/>
           </View>
-          <HobbiesList changeUser={changeUser} />
+          <HobbiesList changeUser={changeUser} changeColor={changeColor}/>
         </View>
     </View>
   );
@@ -53,6 +57,9 @@ const styles = StyleSheet.create({
     borderColor: appColors.borderColor,
     borderWidth: 2,
   },
+  buttonDark: {
+    backgroundColor: appColors.secondaryDark,
+  },
   shadoxBoxing: {
     shadowColor: "#000",
     shadowOffset: {
@@ -70,4 +77,7 @@ const styles = StyleSheet.create({
     textAlignVertical: "center",
     textAlign: "center",
   },
+  buttonTextDark: {
+    color: appColors.textColorDark
+  }
 });

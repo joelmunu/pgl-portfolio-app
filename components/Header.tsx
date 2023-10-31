@@ -1,33 +1,51 @@
 import { StyleSheet, Text, View, Pressable } from "react-native";
 import appColors from "../assets/styles/appColors";
+
 type HeaderProps = {
   setDisplayMyQR: Function;
+  setChangeColor: Function;
+  changeColor: Boolean;
 };
 
 const Header = (props: HeaderProps) => {
-  const { setDisplayMyQR } = props;
+  const { setDisplayMyQR, setChangeColor, changeColor } = props;
 
   return (
     <View style={styles.topContainer}>
       <View>
-        <Text style={styles.firstTopRowContainer}>My Portfolio App</Text>
+        <Text style={changeColor ? ({...styles.firstTopRowContainer, ...styles.titleDark}) : (styles.firstTopRowContainer)}>My Portfolio App</Text>
       </View>
-      <View style={styles.rowTopSecondContainer}>
+      <View style={changeColor ? ({...styles.rowTopSecondContainer, ...styles.secondaryColorDark}) : (styles.rowTopSecondContainer)}>
         <Pressable onPress={() => setDisplayMyQR(true)}>
-          <Text style={{ ...styles.buttonText, ...styles.shadoxBoxing }}>
+          <Text style={changeColor ? ({ ...styles.buttonTextDark, ...styles.shadoxBoxing }) : ({ ...styles.buttonText, ...styles.shadoxBoxing })}>
             Mi info
           </Text>
         </Pressable>
-        <Pressable>
-          <Text style={{ ...styles.buttonText, ...styles.shadoxBoxing }}>
-            Modo oscuro
-          </Text>
-        </Pressable>
+        {changeColor ? (
+          <Pressable
+            onPress={() => setChangeColor(false)}
+            accessibilityLabel="Boton para cambiar entre modo oscuro y claro"
+          >
+            <Text style={changeColor ? ({ ...styles.buttonTextDark, ...styles.shadoxBoxing }) : ({ ...styles.buttonText, ...styles.shadoxBoxing })}>
+              Modo claro
+            </Text>
+          </Pressable>
+
+        ) : (
+          <Pressable
+            onPress={() => setChangeColor(true)}
+            accessibilityLabel="Boton para cambiar entre modo oscuro y claro"
+          >
+            <Text style={changeColor ? ({ ...styles.buttonTextDark, ...styles.shadoxBoxing }) : ({ ...styles.buttonText, ...styles.shadoxBoxing })}>
+              Modo oscuro
+            </Text>
+          </Pressable>
+        )}
         <Pressable
           onPress={() => setDisplayMyQR(false)}
           accessibilityLabel="Boton para mostrar o ocultar el QR"
         >
-          <Text style={{ ...styles.buttonText, ...styles.shadoxBoxing }}>
+          <Text style={changeColor ? ({ ...styles.buttonTextDark, ...styles.shadoxBoxing }) : ({ ...styles.buttonText, ...styles.shadoxBoxing })}>
             Mi Repo
           </Text>
         </Pressable>
@@ -53,11 +71,18 @@ const styles = StyleSheet.create({
     padding: 15,
     width: "100%",
   },
+  titleDark: {
+    backgroundColor: appColors.primaryDark,
+    color: appColors.titleColorDark,
+  },
   rowTopSecondContainer: {
     flexDirection: "row",
     backgroundColor: appColors.secondary,
     justifyContent: "space-evenly",
     alignItems: "center",
+  },
+  secondaryColorDark: {
+    backgroundColor: appColors.secondaryDark,
   },
   shadoxBoxing: {
     shadowColor: "#000",
@@ -71,6 +96,12 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: appColors.textColor,
+    fontWeight: "bold",
+    textTransform: "uppercase",
+    padding: 5,
+  },
+  buttonTextDark: {
+    color: appColors.textColorDark,
     fontWeight: "bold",
     textTransform: "uppercase",
     padding: 5,

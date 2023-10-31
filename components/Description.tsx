@@ -3,9 +3,13 @@ import appColors from "../assets/styles/appColors";
 
 type infoProps = {
   changeUser: Boolean;
+  changeColor: Boolean;
 };
 
 const Description = (props: infoProps) => {
+
+  const {changeUser, changeColor} = props;
+
   return (
     <View>
       {props.changeUser ? (
@@ -15,7 +19,7 @@ const Description = (props: infoProps) => {
             source={require("../assets/messichikito.jpg")}
           />
           <View style={styles.descriptionContainer}>
-            <Text style={styles.titleStyle}>Descripción sobre Manu</Text>
+            <Text style={changeColor ? ({...styles.descriptionStyle, ...styles.titleStyle, ...styles.descriptionTitleDark}) : ({...styles.titleStyle, ...styles.descriptionStyle})}>Descripción sobre Manu</Text>
             <Text style={styles.textStyle}>
               Soy Manu me gusta el cine, la formula 1, la edición de videos y
               jugar videojuegos y en especial el papers please
@@ -29,7 +33,7 @@ const Description = (props: infoProps) => {
             source={require("../assets/AfroPixel.png")}
           />
           <View style={styles.descriptionContainer}>
-            <Text style={styles.titleStyle}>Descripción sobre Joel</Text>
+            <Text style={changeColor ? ({...styles.descriptionStyle, ...styles.titleStyle, ...styles.descriptionTitleDark}) : ({...styles.titleStyle, ...styles.descriptionStyle})}>Descripción sobre Joel</Text>
             <Text style={styles.textStyle}>
               Mi nombre es Joel Munuera Marrero, actualmente me encuentro
               estudiando 2º CFGS DAM en Salesianos la Cuesta.
@@ -62,6 +66,9 @@ const styles = StyleSheet.create({
   descriptionStyle: {
     flexDirection: "row",
     alignItems: "center",
+  },
+  descriptionTitleDark: {
+    color: appColors.titleColorDark
   },
   descriptionContainer: {
     margin: 10,

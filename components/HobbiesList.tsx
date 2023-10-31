@@ -3,51 +3,55 @@ import appColors from "../assets/styles/appColors";
 
 type infoProps = {
   changeUser: Boolean;
+  changeColor: Boolean;
 };
 
 const HobbiesList = (props: infoProps) => {
+  
+  const {changeUser, changeColor} = props;
+
   return (
-    <View>
-      {props.changeUser ? (
+    <View style={styles.container}>
+      {changeUser ? (
         <View>
-          <Text style={styles.titleStyle}>cosas que me gustan mucho:</Text>
+          <Text style={changeColor ? ({...styles.titleStyle, ...styles.titleDark}) : (styles.titleStyle)}>cosas que me gustan mucho:</Text>
           <ScrollView style={styles.scrollviewStyle}>
-            <Text style={styles.hobbiesStyle}>Ir al cine</Text>
-            <Text style={styles.hobbiesStyle}>Ver series</Text>
-            <Text style={styles.hobbiesStyle}>Ver F1</Text>
-            <Text style={styles.hobbiesStyle}>Viajar</Text>
-            <Text style={styles.hobbiesStyle}>Escuchar Música</Text>
-            <Text style={styles.hobbiesStyle}>Ver documentales</Text>
-            <Text style={styles.hobbiesStyle}>Ducharme</Text>
-            <Text style={styles.hobbiesStyle}>
+            <Text style={changeColor ? ({...styles.hobbiesStyle, ...styles.hobbiesStyleDark}) : (styles.hobbiesStyle)}>Ir al cine</Text>
+            <Text style={changeColor ? ({...styles.hobbiesStyle, ...styles.hobbiesStyleDark}) : (styles.hobbiesStyle)}>Ver series</Text>
+            <Text style={changeColor ? ({...styles.hobbiesStyle, ...styles.hobbiesStyleDark}) : (styles.hobbiesStyle)}>Ver F1</Text>
+            <Text style={changeColor ? ({...styles.hobbiesStyle, ...styles.hobbiesStyleDark}) : (styles.hobbiesStyle)}>Viajar</Text>
+            <Text style={changeColor ? ({...styles.hobbiesStyle, ...styles.hobbiesStyleDark}) : (styles.hobbiesStyle)}>Escuchar Música</Text>
+            <Text style={changeColor ? ({...styles.hobbiesStyle, ...styles.hobbiesStyleDark}) : (styles.hobbiesStyle)}>Ver documentales</Text>
+            <Text style={changeColor ? ({...styles.hobbiesStyle, ...styles.hobbiesStyleDark}) : (styles.hobbiesStyle)}>Ducharme</Text>
+            <Text style={changeColor ? ({...styles.hobbiesStyle, ...styles.hobbiesStyleDark}) : (styles.hobbiesStyle)}>
               Videojuegos en especial el Papers Please
             </Text>
-            <Text style={styles.hobbiesStyle}>
+            <Text style={changeColor ? ({...styles.hobbiesStyle, ...styles.hobbiesStyleDark}) : (styles.hobbiesStyle)}>
               Me gusta por si no lo dije el papers please
             </Text>
           </ScrollView>
         </View>
       ) : (
         <View>
-          <Text style={styles.titleStyle}>cosas que me gustan mucho:</Text>
+          <Text style={changeColor ? ({...styles.titleStyle, ...styles.titleDark}) : (styles.titleStyle)}>cosas que me gustan mucho:</Text>
           <ScrollView style={styles.scrollviewStyle}>
-            <Text style={styles.hobbiesStyle}>Informática</Text>
-            <Text style={styles.hobbiesStyle}>
+            <Text style={changeColor ? ({...styles.hobbiesStyle, ...styles.hobbiesStyleDark}) : (styles.hobbiesStyle)}>Informática</Text>
+            <Text style={changeColor ? ({...styles.hobbiesStyle, ...styles.hobbiesStyleDark}) : (styles.hobbiesStyle)}>
               Ver producciones audiovisuales de alta calidad
             </Text>
-            <Text style={styles.hobbiesStyle}>Ver la kinli</Text>
-            <Text style={styles.hobbiesStyle}>
+            <Text style={changeColor ? ({...styles.hobbiesStyle, ...styles.hobbiesStyleDark}) : (styles.hobbiesStyle)}>Ver la kinli</Text>
+            <Text style={changeColor ? ({...styles.hobbiesStyle, ...styles.hobbiesStyleDark}) : (styles.hobbiesStyle)}>
               Coches y simuladores de conducción
             </Text>
-            <Text style={styles.hobbiesStyle}>Agapornis</Text>
-            <Text style={styles.hobbiesStyle}>Aviación</Text>
-            <Text style={styles.hobbiesStyle}>McDonald's</Text>
-            <Text style={styles.hobbiesStyle}>
+            <Text style={changeColor ? ({...styles.hobbiesStyle, ...styles.hobbiesStyleDark}) : (styles.hobbiesStyle)}>Agapornis</Text>
+            <Text style={changeColor ? ({...styles.hobbiesStyle, ...styles.hobbiesStyleDark}) : (styles.hobbiesStyle)}>Aviación</Text>
+            <Text style={changeColor ? ({...styles.hobbiesStyle, ...styles.hobbiesStyleDark}) : (styles.hobbiesStyle)}>McDonald's</Text>
+            <Text style={changeColor ? ({...styles.hobbiesStyle, ...styles.hobbiesStyleDark}) : (styles.hobbiesStyle)}>
               Escuchar producciones musicales de alta calidad en formato
               original sin comprimir
             </Text>
-            <Text style={styles.hobbiesStyle}>Ir al gimnsasio y correr</Text>
-            <Text style={styles.hobbiesStyle}>
+            <Text style={changeColor ? ({...styles.hobbiesStyle, ...styles.hobbiesStyleDark}) : (styles.hobbiesStyle)}>Ir al gimnsasio y correr</Text>
+            <Text style={changeColor ? ({...styles.hobbiesStyle, ...styles.hobbiesStyleDark}) : (styles.hobbiesStyle)}>
               Y sobretodo producciones audiovisiales de la mejor de las
               calidades
             </Text>
@@ -61,6 +65,9 @@ const HobbiesList = (props: infoProps) => {
 export default HobbiesList;
 
 const styles = StyleSheet.create({
+  container: {
+    height: "100%"
+  },
   hobbiesStyle: {
     borderColor: "black",
     borderWidth: 1,
@@ -73,12 +80,19 @@ const styles = StyleSheet.create({
     fontSize: 16,
     backgroundColor: appColors.Silver,
   },
+  hobbiesStyleDark: {
+    backgroundColor: appColors.secondaryDark,
+    color: appColors.textColorDark
+  },
   titleStyle: {
     color: appColors.titleColor,
     fontWeight: "900",
     textTransform: "capitalize",
     fontSize: 20,
     textAlign: "center",
+  },
+  titleDark: {
+    color: appColors.titleColorDark
   },
   scrollviewStyle: {
     padding: 10

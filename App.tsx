@@ -3,22 +3,24 @@ import Header from "./components/Header";
 import { useState } from "react";
 import QrCodes from "./components/QrCodes";
 import InfoContainer from "./components/InfoContainer";
+import appColors from "./assets/styles/appColors";
 
 export default function App() {
   const [displayMyQR, setDisplayMyQR] = useState(true);
+  const [changeColor, setChangeColor] = useState(false);
 
   return (
-    <View style={styles.container}>
+    <View style={changeColor ? (styles.containerDark) : (styles.container)}>
       <View style={styles.headerContainer}>
-        <Header setDisplayMyQR={setDisplayMyQR} />
+        <Header setDisplayMyQR={setDisplayMyQR} setChangeColor={setChangeColor} changeColor={changeColor}/>
       </View>
       {displayMyQR ? (
         <View style={styles.infoContainer}>
-          <InfoContainer/>
+          <InfoContainer changeColor={changeColor}/>
         </View>
       ) : (
         <View style={{marginTop: -550}}>
-          <QrCodes />
+          <QrCodes changeColor={changeColor}/>
         </View>
       )}
     </View>
@@ -28,6 +30,11 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  containerDark: {
+    backgroundColor: appColors.backgroundDark,
     alignItems: "center",
     justifyContent: "center",
   },
