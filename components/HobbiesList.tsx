@@ -11,7 +11,7 @@ const HobbiesList = (props: infoProps) => {
       {props.changeUser ? (
         <View>
           <Text style={styles.titleStyle}>cosas que me gustan mucho:</Text>
-          <ScrollView>
+          <ScrollView style={styles.scrollviewStyle}>
             <Text style={styles.hobbiesStyle}>Ir al cine</Text>
             <Text style={styles.hobbiesStyle}>Ver series</Text>
             <Text style={styles.hobbiesStyle}>Ver F1</Text>
@@ -30,7 +30,7 @@ const HobbiesList = (props: infoProps) => {
       ) : (
         <View>
           <Text style={styles.titleStyle}>cosas que me gustan mucho:</Text>
-          <ScrollView style={{ padding: 10 }}>
+          <ScrollView style={styles.scrollviewStyle}>
             <Text style={styles.hobbiesStyle}>Informática</Text>
             <Text style={styles.hobbiesStyle}>
               Ver producciones audiovisuales de alta calidad
@@ -80,4 +80,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: "center",
   },
+  scrollviewStyle: {
+    padding: 10
+  }
 });
