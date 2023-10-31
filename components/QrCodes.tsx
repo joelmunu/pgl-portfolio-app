@@ -1,13 +1,21 @@
 import { StyleSheet, View, Text } from "react-native";
 import QRCode from "react-native-qrcode-svg";
+import appColors from "../assets/styles/appColors";
 
-const QrCodes = () => {
+type QrProps = {
+  changeColor: Boolean;
+};
+
+const QrCodes = (props: QrProps) => {
+
+  const {changeColor} = props;
+
   return (
     <View style={styles.bodyStyles}>
-        <Text style={styles.text}>GitHub de Manu</Text>
-        <QRCode value="https://github.com/Maanuuu2310" />
-        <Text style={styles.text}>GitHub de Joel</Text>
-        <QRCode value="https://github.com/joelmunu" />
+        <Text style={changeColor ? ({...styles.text, ...styles.darkText}) : (styles.text)}>GitHub de Manu</Text>
+        <QRCode value="https://github.com/Maanuuu2310" color="white" backgroundColor="black"/>
+        <Text style={changeColor ? ({...styles.text, ...styles.darkText}) : (styles.text)}>GitHub de Joel</Text>
+        <QRCode value="https://github.com/joelmunu" color="white" backgroundColor="black"/>
     </View>
   );
 };
@@ -26,5 +34,8 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     marginTop: 50,
     fontSize: 16,
+  },
+  darkText: {
+    color: appColors.textColorDark
   }
 });
